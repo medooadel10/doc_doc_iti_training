@@ -34,9 +34,11 @@ class AppRouter {
         );
       case Routes.home:
         return MaterialPageRoute(
-            builder: (context) => ChangeNotifierProvider(
-                create: (context) => HomeProvider(),
-                child: const HomeScreen()));
+          builder: (context) => ChangeNotifierProvider(
+            create: (context) => HomeProvider()..getSpecializations(),
+            child: const HomeScreen(),
+          ),
+        );
       default:
         return MaterialPageRoute(builder: (context) => Container());
     }

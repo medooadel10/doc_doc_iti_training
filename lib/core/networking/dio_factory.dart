@@ -35,4 +35,17 @@ class DioFactory {
     );
     return response;
   }
+
+  static Future<Response> getData({
+    required String path,
+    String? token,
+  }) async {
+    final response = await dio.get(
+      path,
+      options: Options(headers: {
+        'Authorization': 'Bearer $token',
+      }),
+    );
+    return response;
+  }
 }

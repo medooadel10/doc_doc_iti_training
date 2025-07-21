@@ -13,7 +13,7 @@ class HomeBanner extends StatelessWidget {
           height: 200,
           width: double.infinity,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
           child: Image.asset(
             'assets/images/home_banner_bg.png',
             fit: BoxFit.cover,
