@@ -1,6 +1,7 @@
 import 'package:docdoc_app/core/router/routes.dart';
 import 'package:docdoc_app/features/create_account/logic/create_account_provider.dart';
 import 'package:docdoc_app/features/create_account/ui/create_account_screen.dart';
+import 'package:docdoc_app/features/home/logic/home_provider.dart';
 import 'package:docdoc_app/features/home/ui/home_screen.dart';
 import 'package:docdoc_app/features/login/logic/login_provider.dart';
 import 'package:docdoc_app/features/login/ui/login_screen.dart';
@@ -32,7 +33,10 @@ class AppRouter {
           ),
         );
       case Routes.home:
-        return MaterialPageRoute(builder: (context) => const HomeScreen());
+        return MaterialPageRoute(
+            builder: (context) => ChangeNotifierProvider(
+                create: (context) => HomeProvider(),
+                child: const HomeScreen()));
       default:
         return MaterialPageRoute(builder: (context) => Container());
     }

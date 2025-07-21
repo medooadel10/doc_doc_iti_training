@@ -20,6 +20,10 @@ extension ContextEx on BuildContext {
   void pop() {
     Navigator.pop(this);
   }
+
+  ColorScheme get colorScheme {
+    return Theme.of(this).colorScheme;
+  }
 }
 
 extension PaddingEx on Widget {
