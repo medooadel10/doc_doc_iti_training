@@ -1,3 +1,4 @@
+import 'package:docdoc_app/core/helpers/local_storage.dart';
 import 'package:docdoc_app/core/networking/dio_factory.dart';
 import 'package:docdoc_app/core/router/app_router.dart';
 import 'package:docdoc_app/core/router/routes.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DioFactory.init();
+  await LocalStorage.init();
   runApp(const MyApp());
 }
 

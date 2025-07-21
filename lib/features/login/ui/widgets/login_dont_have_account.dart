@@ -1,3 +1,5 @@
+import 'package:docdoc_app/core/helpers/extensions.dart';
+import 'package:docdoc_app/core/router/routes.dart';
 import 'package:docdoc_app/core/widgets/custom_text_button.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,12 @@ class LoginDontHaveAccount extends StatelessWidget {
             fontSize: 14,
           ),
         ),
-        CustomTextButton(onPressed: () {}, text: 'Sign Up')
+        CustomTextButton(
+          onPressed: () {
+            context.pushReplacmentNamed(Routes.createAccount);
+          },
+          text: 'Sign Up',
+        )
       ],
     );
   }

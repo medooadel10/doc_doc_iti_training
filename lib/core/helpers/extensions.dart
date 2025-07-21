@@ -46,9 +46,9 @@ extension PaddingEx on Widget {
     );
   }
 
-  Widget paddingAll({
-    double value = 0,
-  }) {
+  Widget paddingAll(
+    double value,
+  ) {
     return Padding(
       padding: EdgeInsets.all(value),
       child: this,

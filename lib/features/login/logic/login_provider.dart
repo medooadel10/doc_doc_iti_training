@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:docdoc_app/core/helpers/local_storage.dart';
 import 'package:docdoc_app/core/networking/api_constants.dart';
 import 'package:docdoc_app/core/networking/dio_factory.dart';
+import 'package:docdoc_app/features/create_account/models/auth_response_model.dart';
 import 'package:flutter/material.dart';
 
 class LoginProvider extends ChangeNotifier {
@@ -29,9 +31,10 @@ class LoginProvider extends ChangeNotifier {
           },
         );
         isLoginLoading = false;
-        final status = response.data['status'];
+        final data = AuthResponseModel.fromJson(response.data);
+        await LocalStorage.saveToken(data.data.token);
         notifyListeners();
-        return status;
+        return data.status;
       } on DioException catch (_) {
         isLoginLoading = false;
         notifyListeners();

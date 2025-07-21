@@ -1,4 +1,4 @@
-import 'package:docdoc_app/core/style/colors.dart';
+import 'package:docdoc_app/core/widgets/custom_auth_title_desc.dart';
 import 'package:flutter/material.dart';
 
 class LoginTitleAndDesc extends StatelessWidget {
@@ -6,26 +6,10 @@ class LoginTitleAndDesc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 8,
-      children: [
-        Text(
-          'Welcome Back',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Theme.of(context).colorScheme.primary,
-          ),
-        ),
-        const Text(
+    return const CustomAuthTitleDesc(
+      title: 'Welcome Back',
+      description:
           "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
-          style: TextStyle(
-            fontSize: 14,
-            color: AppColors.textBodyColor,
-          ),
-        )
-      ],
     );
   }
 }

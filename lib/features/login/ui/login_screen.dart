@@ -17,20 +17,19 @@ class LoginScreen extends StatelessWidget {
           children: [
             LoginTitleAndDesc(),
             Expanded(
-              child: Column(
-                spacing: 18,
-                children: [
-                  LoginForm(),
-                  LoginSubmitBtn(),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  spacing: 18,
+                  children: [
+                    LoginForm(),
+                    LoginSubmitBtn(),
+                  ],
+                ),
               ),
             ),
             LoginDontHaveAccount(),
           ],
-        ).paddingSymmetric(
-          horizontal: 16,
-          vertical: 16,
-        ),
+        ).paddingAll(16),
       ),
     );
   }
