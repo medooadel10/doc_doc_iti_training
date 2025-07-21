@@ -1,3 +1,4 @@
+import 'package:docdoc_app/core/helpers/extensions.dart';
 import 'package:docdoc_app/features/login/ui/widgets/login_dont_have_account.dart';
 import 'package:docdoc_app/features/login/ui/widgets/login_form.dart';
 import 'package:docdoc_app/features/login/ui/widgets/login_submit_btn.dart';
@@ -9,26 +10,26 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-          child: Column(
-            spacing: 50,
-            children: [
-              LoginTitleAndDesc(),
-              Expanded(
-                child: Column(
-                  spacing: 18,
-                  children: [
-                    LoginForm(),
-                    LoginSubmitBtn(),
-                  ],
-                ),
+        child: const Column(
+          spacing: 50,
+          children: [
+            LoginTitleAndDesc(),
+            Expanded(
+              child: Column(
+                spacing: 18,
+                children: [
+                  LoginForm(),
+                  LoginSubmitBtn(),
+                ],
               ),
-              LoginDontHaveAccount(),
-            ],
-          ),
+            ),
+            LoginDontHaveAccount(),
+          ],
+        ).paddingSymmetric(
+          horizontal: 16,
+          vertical: 16,
         ),
       ),
     );
