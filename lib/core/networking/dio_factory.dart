@@ -48,4 +48,17 @@ class DioFactory {
     );
     return response;
   }
+
+  static Future<Response> deleteData({
+    required String path,
+    String? token,
+  }) async {
+    final response = await dio.delete(
+      path,
+      options: Options(headers: {
+        'Authorization': 'Bearer $token',
+      }),
+    );
+    return response;
+  }
 }

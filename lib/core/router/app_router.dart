@@ -1,7 +1,11 @@
 import 'package:docdoc_app/core/router/routes.dart';
 import 'package:docdoc_app/features/create_account/logic/create_account_provider.dart';
 import 'package:docdoc_app/features/create_account/ui/create_account_screen.dart';
+import 'package:docdoc_app/features/doctor_details/logic/doctor_details_provider.dart';
+import 'package:docdoc_app/features/doctor_details/ui/doctor_details_screen.dart';
+import 'package:docdoc_app/features/doctors/ui/doctors_screen.dart';
 import 'package:docdoc_app/features/home/logic/home_provider.dart';
+import 'package:docdoc_app/features/home/models/doctors_response_model.dart';
 import 'package:docdoc_app/features/home/ui/home_screen.dart';
 import 'package:docdoc_app/features/login/logic/login_provider.dart';
 import 'package:docdoc_app/features/login/ui/login_screen.dart';
@@ -40,6 +44,19 @@ class AppRouter {
               ..getDoctors(),
             child: const HomeScreen(),
           ),
+        );
+
+      case Routes.doctors:
+        final args = settings.arguments as List<DoctorModel>;
+        return MaterialPageRoute(
+          builder: (context) => DoctorsScreen(doctors: args),
+        );
+      case Routes.doctorDetails:
+        final doctor = settings.arguments as DoctorModel;
+        return MaterialPageRoute(
+          builder: (context) => ChangeNotifierProvider(
+              create: (context) => DoctorDetailsProvider(),
+              child: DoctorDetailsScreen(doctor: doctor)),
         );
       default:
         return MaterialPageRoute(builder: (context) => Container());

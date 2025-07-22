@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:docdoc_app/core/helpers/local_storage.dart';
 import 'package:docdoc_app/core/networking/api_constants.dart';
 import 'package:docdoc_app/core/networking/dio_factory.dart';
+import 'package:docdoc_app/features/appointments/ui/appointments_screen.dart';
 import 'package:docdoc_app/features/home/models/doctors_response_model.dart';
 import 'package:docdoc_app/features/home/models/home_specializations_response_model.dart';
 import 'package:docdoc_app/features/home/ui/home_body_screen.dart';
@@ -18,7 +19,7 @@ class HomeProvider extends ChangeNotifier {
   List<Widget> homeScreens = [
     const HomeBodyScreen(),
     Container(),
-    Container(),
+    const AppointmentsScreen(),
     Container(),
   ];
 

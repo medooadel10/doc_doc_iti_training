@@ -40,6 +40,7 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.5.3
   cached_network_image: ^3.4.1
+  fluttertoast: ^8.2.12
 
 dev_dependencies:
   flutter_test:

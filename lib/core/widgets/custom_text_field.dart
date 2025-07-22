@@ -9,6 +9,8 @@ class CustomTextField extends StatelessWidget {
   final IconData? suffixIcon;
   final VoidCallback? onSuffixIcon;
   final TextInputType keyboardType;
+  final bool readOnly;
+  final VoidCallback? onTap;
   const CustomTextField({
     Key? key,
     required this.controller,
@@ -18,12 +20,16 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.onSuffixIcon,
     this.keyboardType = TextInputType.text,
+    this.readOnly = false,
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      readOnly: readOnly,
+      onTap: onTap,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(

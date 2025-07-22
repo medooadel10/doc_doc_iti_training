@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                 icon: Icon(
                   Icons.calendar_month,
                 ),
-                label: 'Calendar',
+                label: 'Appointments',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
