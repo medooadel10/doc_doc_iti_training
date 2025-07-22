@@ -37,7 +37,7 @@ class CreateAccountProvider extends ChangeNotifier {
         print(dataResult.data.token);
         notifyListeners();
         return dataResult.status;
-      } on DioException catch (e) {
+      } on DioException catch (_) {
         isLoading = false;
         notifyListeners();
         return false;

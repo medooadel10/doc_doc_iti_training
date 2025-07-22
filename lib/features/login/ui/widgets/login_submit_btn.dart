@@ -1,3 +1,5 @@
+import 'package:docdoc_app/core/helpers/extensions.dart';
+import 'package:docdoc_app/core/router/routes.dart';
 import 'package:docdoc_app/core/widgets/custom_button.dart';
 import 'package:docdoc_app/features/login/logic/login_provider.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +26,7 @@ class LoginSubmitBtn extends StatelessWidget {
               'You are logged in successfully',
             ));
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            context.pushNamedAndRemoveAll(Routes.home);
           } else if (result != null && !result) {
             SnackBar snackBar = const SnackBar(
                 content: Text(

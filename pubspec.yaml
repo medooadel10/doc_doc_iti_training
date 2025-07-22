@@ -39,6 +39,7 @@ dependencies:
   dio: ^5.8.0+1
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.5.3
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:
@@ -80,12 +81,12 @@ flutter:
   fonts:
     - family: Inter
       fonts:
-        - asset: fonts/Inter_18pt-Regular.ttf
-        - asset: fonts/Inter_18pt-Medium.ttf
-        - asset: fonts/Inter_18pt-Black.ttf
-        - asset: fonts/Inter_18pt-Bold.ttf
-        - asset: fonts/Inter_18pt-SemiBold.ttf
-        - asset: fonts/Inter_18pt-Light.ttf
+        - asset: assets/fonts/Inter_18pt-Regular.ttf
+        - asset: assets/fonts/Inter_18pt-Medium.ttf
+        - asset: assets/fonts/Inter_18pt-Black.ttf
+        - asset: assets/fonts/Inter_18pt-Bold.ttf
+        - asset: assets/fonts/Inter_18pt-SemiBold.ttf
+        - asset: assets/fonts/Inter_18pt-Light.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
